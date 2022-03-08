@@ -1,3 +1,4 @@
+import java.util.Date;
 
 class Employee {
     private final String empId;
@@ -9,9 +10,14 @@ class Employee {
 
     private Employee(Builder builder) {
         this.empId = builder.empId;
+        this.firstName = builder.firstName;
+        this.lastName = builder.lastName;
+        this.dob = builder.dob;
+        this.role = builder.role;
+        this.company = builder.company;
     }
 
-    class Builder {
+    static class Builder {
 
         private final String empId;
         private String firstName;
@@ -20,7 +26,7 @@ class Employee {
         private String role;
         private String company;
 
-        public Builder(Stirng empId) {
+        public Builder(String empId) {
             this.empId = empId;
         }
 
@@ -35,7 +41,7 @@ class Employee {
         }
 
         Builder dob(Date dob) {
-            this.dob = this.dob;
+            this.dob = dob;
             return this;
         }
 
